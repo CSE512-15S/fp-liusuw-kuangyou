@@ -8,7 +8,7 @@
 We decide to design and implement a visualization of HIV’s mutation in a human body and T-cell epitope mapping. A related visualization tool can be found through this URL:
 	http://www.hiv.lanl.gov/content/sequence/jbrowse/?loc=Gag%3A1..500&tracks=PROTEIN%2CSub-protein_map&data=hivdata%2FEpitope-protein&highlight=
 
-We will be cooperating with Andrew Gartland, a staff scientist at Fred Hutchinson Cancer Research Center and Mike Dapp, a Post-Doctoral HIV researcher in UW Immunology.
+We will be cooperating with Andrew Gartland, a staff scientist at Fred Hutchinson Cancer Research Center and Mike Dapp, a Post-Doctoral HIV researcher at UW Immunology.
 
 ## Goal
 The goal of the software is to assist in finding a potential cure for the deadly disease AIDS.
@@ -17,7 +17,7 @@ AIDS is caused by HIV, which is a highly mutable virus. Once HIV enters a subjec
 
 According to Andrew, the scientist at Fred Hutch center, research shows that most people infected with HIV have T-cells that target specific region of the virus, known as epitopes, which are ineffective at recognizing the virus over time. Specifically, they target a part that is prone to mutation; however, a small minority of people known as “elite controllers” have T-cells that target a very unique set of epitopes and are able to control without ever developing AIDS.
 
-So we want to build a tool to help spotting interesting region of the HIV’s protein sequence. And provide an intuitive and interactive view of the virus mutation trend. 
+So we want to build a tool to help spotting interesting region of the HIV’s protein sequence and provide an intuitive and interactive view of the virus mutation trend. 
 
 ## Things to Visualize
 1.	Variants of the specific Amino Acid in sequences
