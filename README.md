@@ -1,5 +1,5 @@
 # T-Cell-Epitope-Visualization
-## Team member:
+## Team members:
 1.	Liusu Wang    liusuw@uw.edu
 2.	Kuangyou Yao     kuangyou@uw.edu
 	
