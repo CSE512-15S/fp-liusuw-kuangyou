@@ -5,7 +5,7 @@
 	
 ## Project:
 
-We decide to design and implement a visualization of HIV’s mutation in a human body and T-cell epitope mapping. A related visualization tool can be found through this URL:
+We decide to design and implement an interactive visualization of HIV’s mutation in a human body and T-cell epitope mapping. A related visualization tool can be found through this URL:
 	http://www.hiv.lanl.gov/content/sequence/jbrowse/?loc=Gag%3A1..500&tracks=PROTEIN%2CSub-protein_map&data=hivdata%2FEpitope-protein&highlight=
 
 We will be cooperating with Andrew Gartland, a staff scientist at Fred Hutchinson Cancer Research Center and Mike Dapp, a Post-Doctoral HIV researcher at UW Immunology.
