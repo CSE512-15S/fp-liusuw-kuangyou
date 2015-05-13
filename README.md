@@ -13,11 +13,11 @@ We will be cooperating with Andrew Gartland, a staff scientist at Fred Hutchinso
 ## Goal
 The goal of the software is to assist in finding a potential cure for the deadly disease AIDS.
 
-AIDS is caused by HIV, which is a highly mutable virus. Once HIV enters a subject’s system. The HIV virus will “evolve” to different types in order to escape from subject’s immune system. The virus evolves through a change in certain amino acid in its protein shell. 
+AIDS is caused by HIV, which is a highly mutable virus. Once HIV enters a subject’s system, the HIV virus will “evolve” to different types in order to escape from subject’s immune system. The virus evolves through a change in certain amino acid in its protein shell. 
 
 According to Andrew, the scientist at Fred Hutch center, research shows that most people infected with HIV have T-cells that target specific region of the virus, known as epitopes, which are ineffective at recognizing the virus over time. Specifically, they target a part that is prone to mutation; however, a small minority of people known as “elite controllers” have T-cells that target a very unique set of epitopes and are able to control without ever developing AIDS.
 
-So we want to build a tool to help spotting interesting region of the HIV’s protein sequence and provide an intuitive and interactive view of the virus mutation trend. 
+So we want to build a tool to help spot interesting region of the HIV’s protein sequence and provide an intuitive and interactive view of the virus mutation trend. 
 
 ## Things to Visualize
 1.	Variants of the specific Amino Acid in sequences
