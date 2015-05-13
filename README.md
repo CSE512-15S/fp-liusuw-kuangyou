@@ -24,6 +24,7 @@ So we want to build a tool to help spotting interesting region of the HIV’s pr
 2.	HIV’s mutation direction in response to subject’s immune system
 3.	Details of the epitope overlapping the mutated region 
 ![initial discussion](https://cloud.githubusercontent.com/assets/4379884/7601246/92210afe-f8c8-11e4-9ca2-64df2a468fcc.jpg)
+
 ## Data
 1.	HIV protein sequence from infected individuals
 2.	Known T-cell HIV epitopes mapping
