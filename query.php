@@ -9,6 +9,16 @@
 		$file = $_GET['file'];
 		$index = $_GET['index'];
 
+		// input santinization, only alphabetical and numbers and "_" allowed
+		if( preg_match("/^[a-zA-Z0-9_]+$/", $file) == 0) {
+			die("nice try");
+		}
+
+		if( preg_match("/^[a-zA-Z0-9_]+$/", $index) == 0) {
+			die("nice try");
+		}		
+
+
 		$entropies_cmd = "sudo /usr/bin/python calculate_entropy.py ".$file;
 		$col_aa_cmd = "sudo /usr/bin/python write_col_aa.py ".$file." ".$index;
 
