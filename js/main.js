@@ -1,8 +1,8 @@
-function brushed(brush, x2, focus, xAxis, yAxis, width, height) {
+function brushed(brush, x2, focus, xAxis, yAxis, width, height, data) {
   x.domain(brush.empty() ? x2.domain() : brush.extent());
   focus.select(".x.axis").call(xAxis);
 
-  d3.csv("output/HIV_pt1_AA_align_tp1_entropies.csv", type, function(error, data) {
+
     var leftMargin = brush.extent()[0];
     var rightMargin = brush.extent()[1];
 
@@ -31,7 +31,6 @@ function brushed(brush, x2, focus, xAxis, yAxis, width, height) {
        .attr("index", filteredData[i].index)
        .attr("onclick", "explodeDetails(this)");
     }
-  });
 }
 
 function type(d) {
@@ -47,6 +46,8 @@ window.onload = (function() {
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     height2 = 500 - margin2.top - margin2.bottom;
+
+  var csvData;
 
   x = d3.scale.linear().range([0, width]);
   x2 = d3.scale.linear().range([0, width]);
@@ -71,10 +72,15 @@ window.onload = (function() {
 
   var brush = d3.svg.brush()
     .x(x2)
-    .on("brush", function() { brushed(brush, x2, focus, xAxis, yAxis, width, height); });
+    .on("brush", function() { brushed(brush, x2, focus, xAxis, yAxis, width, height, csvData); });
 
-  
-  d3.csv("output/HIV_pt1_AA_align_tp1_entropies.csv", type, function(error, data) {
+  // example query 
+  // http://192.241.216.102/512-finalProject/query.php?file=HIV_pt1_AA_align_tp1&index=9&request=csv
+  var fileName = "HIV_pt1_AA_align_tp1";
+  var url = "http://192.241.216.102/512-finalProject/query.php?file=" + fileName + "&index=9&request=csv";
+  d3.csv(url, type, function(error, data) {
+    csvData = data;
+
     x.domain(d3.extent(data.map(function(d) { return d.index; })));
     y.domain([0, d3.max(data.map(function(d) { return d.entropy; }))]);
     x2.domain(x.domain());
