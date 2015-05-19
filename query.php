@@ -10,6 +10,7 @@
 		$index = $_GET['index'];
 
 		// input santinization, only alphabetical and numbers and "_" allowed
+		// 防君子不防鱼尾
 		if( preg_match("/^[a-zA-Z0-9_]+$/", $file) == 0) {
 			die("nice try");
 		}

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from Bio import SeqIO
 from scipy import stats
 import sys
@@ -8,7 +9,7 @@ import sys
 # Creates a new csv file and calculate that
 def main():
     GET_input = sys.argv[1]
-    filepath = "../fasta/" + GET_input + ".fasta"
+    filepath = "fasta/" + GET_input + ".fasta"
 
     ids = []
     seqs = []
@@ -19,9 +20,8 @@ def main():
         seqs.append(seq_record.seq)
 
     entropies = calculate(seqs)
-    write_each_col_aa(ids, seqs)
 
-    f = open("../output/" + GET_input + "_entropies.csv", "w")
+    f = open("output/" + GET_input + "_entropies.csv", "w")
     f.write("index,entropy\n")
     # dummy varible
     f.write("0,0\n")
@@ -29,7 +29,6 @@ def main():
     for i in range(0, len(entropies)):
         f.write(str(i + 1) + ", " + str(entropies[i]) + "\n")
     f.close()
-    print "CSV written"
 
 
 def calculate(seqs):
@@ -64,12 +63,6 @@ def calculate_entropy(col_aa):
     for key, value in mapping.iteritems():
         pk.append(float(value) / total_aa_count)
     return stats.entropy(pk)
-
-
-def write_each_col_aa(ids, seqs):
-    # Skipping the consensus version
-    for i in range(1, len(ids)):
-        print ids[i], seqs[i]
 
 
 main()

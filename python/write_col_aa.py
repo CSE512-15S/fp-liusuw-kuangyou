@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from Bio import SeqIO
 import sys
 
@@ -7,7 +8,7 @@ import sys
 def main():
     GET_input = sys.argv[1]
     index = int(sys.argv[2])
-    filepath = "../fasta/" + GET_input + ".fasta"
+    filepath = "fasta/" + GET_input + ".fasta"
 
     # parse in all the file
     i = 0
@@ -30,14 +31,14 @@ def main():
 
 
 def write_to_json(mapping, GET_input, index):
-    f = open("../output/" + GET_input + "-" + str(index) + ".json", "wb")
+    f = open("output/" + GET_input + "-" + str(index) + ".json", "wb")
     i = 0
     f.write("[\n")
     for key, value in sorted(mapping.iteritems()):
         if i != len(mapping) - 1:
-            f.write('\t{ "V": ' + str(key) + ', "aa": ' + to_string(value) + ' },\n')
+            f.write('\t{ "V": "' + str(key) + '", "aa": ' + to_string(value) + ' },\n')
         else:
-            f.write('\t{ "V": ' + str(key) + ', "aa": ' + to_string(value) + ' }\n')
+            f.write('\t{ "V": "' + str(key) + '", "aa": ' + to_string(value) + ' }\n')
         i += 1
     f.write("]")
     f.close()
