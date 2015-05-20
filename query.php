@@ -21,7 +21,7 @@
 
 
 		$entropies_cmd = "sudo /usr/bin/python calculate_entropy.py ".$file;
-		$col_aa_cmd = "sudo /usr/bin/python write_col_aa.py ".$file." ".$index;
+		$col_aa_cmd = "sudo /usr/bin/python write_col_aa.py ".$file." ".($index);
 
 		$csv_file = "output/".$file."_entropies.csv";
 		$json_file = "output/".$file."-".$index.".json";

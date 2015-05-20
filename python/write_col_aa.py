@@ -14,13 +14,14 @@ def main():
     i = 0
     mapping = dict()
     for seq_record in SeqIO.parse(filepath, "fasta"):
-        # Skipping the first one
+        # Skipping the first one, the consensus
         if i == 0:
             i += 1
             continue
         curr_id = seq_record.id
         color_coding = ""   # To be filled
-        curr_aa = seq_record.seq[index] + color_coding
+        # Switch from index 1 to index 0
+        curr_aa = seq_record.seq[index - 1] + color_coding
         # Assuming ID has form 1V##X### (# are numbers)
         curr_version = curr_id[2: curr_id.index("X")]
         if curr_version not in mapping:
