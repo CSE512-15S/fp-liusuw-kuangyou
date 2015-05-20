@@ -12,11 +12,11 @@
 		// input santinization, only alphabetical and numbers and "_" allowed
 		// 防君子不防鱼尾
 		if( preg_match("/^[a-zA-Z0-9_]+$/", $file) == 0) {
-			die("nice try");
+			die("Invalid input");
 		}
 
 		if( preg_match("/^[a-zA-Z0-9_]+$/", $index) == 0) {
-			die("nice try");
+			die("Invald input");
 		}		
 
 
