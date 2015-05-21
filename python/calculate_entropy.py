@@ -2,6 +2,7 @@
 from Bio import SeqIO
 from scipy import stats
 import sys
+import os
 
 
 # Creates an entropy CSV file of each column
@@ -21,7 +22,10 @@ def main():
 
     entropies = calculate(seqs)
 
-    f = open("output/" + GET_input + "_entropies.csv", "w")
+    if not os.path.exists("output/" + GET_input):
+        os.makedirs("output/" + GET_input)
+
+    f = open("output/" + GET_input + "/" + GET_input + "_entropies.csv", "w")
     f.write("index,entropy\n")
     # dummy varible
     f.write("0,0\n")

@@ -2,18 +2,39 @@
 	<head>
 		<title>Visulization</title>
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/main.js" charset="utf-8"></script>
 		<script type="text/javascript" src="js/detail.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/control.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
+		<h1 id="sequence_name">HIV_pt1_AA_align_tp1</h1>
 		<div id="SVG"></div>
 		<div id="details">
 			<h1>Details</h1>
 			<table id="time_line"></table>
 		</div>
+		<div id="control">
+			<select id="fasta_select" onchange="changeContext(this)"><select>
 
+			<div id="slider"></div>
+		</div>
+
+
+		<form action="query.php" method="post" enctype="multipart/form-data"> 
+	  		<div><label id="upload">Select file to upload: 
+				<input type="file" id="upload" name="upload"/></label>
+			</div> 
+
+	  		<div>
+	    		<input type="hidden" name="action" value="upload"/> 
+	    		<input type="submit" value="Submit"/> 
+	  		</div>
+
+		</form>
 	</body>
 
 </html>

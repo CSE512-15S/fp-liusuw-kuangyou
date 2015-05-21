@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from Bio import SeqIO
 import sys
+import os
 
 
 # Takes in two argument from command line
@@ -23,7 +24,7 @@ def main():
         # Switch from index 1 to index 0
         curr_aa = seq_record.seq[index - 1] + color_coding
         # Assuming ID has form 1V##X### (# are numbers)
-        curr_version = curr_id[2: curr_id.index("X")]
+        curr_version = curr_id[2: 4]
         if curr_version not in mapping:
             mapping[curr_version] = []
         mapping[curr_version].append(curr_aa)
@@ -32,7 +33,10 @@ def main():
 
 
 def write_to_json(mapping, GET_input, index):
-    f = open("output/" + GET_input + "-" + str(index) + ".json", "wb")
+    if not os.path.exists("output/" + GET_input):
+        os.makedirs("output/" + GET_input)
+
+    f = open("output/" + GET_input + "/" + GET_input + "-" + str(index) + ".json", "wb")
     i = 0
     f.write("[\n")
     for key, value in sorted(mapping.iteritems()):

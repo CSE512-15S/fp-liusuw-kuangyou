@@ -39,8 +39,8 @@ function type(d) {
   return d;
 }
 
-
-window.onload = (function() {
+function init_SVG(fileName){
+  document.getElementById("sequence_name").innerHTML = fileName;
   var margin = {top: 10, right: 10, bottom: 100, left: 40},
     margin2 = {top: 430, right: 10, bottom: 20, left: 40},
     width = 960 - margin.left - margin.right,
@@ -76,7 +76,6 @@ window.onload = (function() {
 
   // example query 
   // http://192.241.216.102/512-finalProject/query.php?file=HIV_pt1_AA_align_tp1&index=9&request=csv
-  var fileName = "HIV_pt1_AA_align_tp1";
   var url = "http://192.241.216.102/512-finalProject/query.php?file=" + fileName + "&index=9&request=csv";
   d3.csv(url, type, function(error, data) {
     csvData = data;
@@ -135,8 +134,28 @@ window.onload = (function() {
            .attr("x2", x(x.domain()[1]))
            .attr("y2", y(curr));
     }
-
   });
-});
+}
 
+window.onload = function() {
+  
+  // initialize the select box
+  d3.text("http://192.241.216.102/512-finalProject/query.php?fasta_query=1", function(error, data) {
+    var fastas = data.split("\n");
+    var selectControl = document.getElementById("fasta_select");
+    for (var i = 0; i < fastas.length; i++) {
+      var curr = document.createElement("option");
+      curr.value = fastas[i];
+      curr.innerHTML = fastas[i];
+      selectControl.appendChild(curr);
+    }
+  });
+  init_SVG("HIV_pt1_AA_align_tp1");
 
+  // initialize the threshold-slider
+  $("#slider").slider({
+    change: function(event, ui) {
+      console.log(ui.value);
+    }
+  });
+};
