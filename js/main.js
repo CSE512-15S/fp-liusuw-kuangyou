@@ -154,8 +154,11 @@ window.onload = function() {
 
   // initialize the threshold-slider
   $("#slider").slider({
+    min: 0,
+    max: 100,
+    value: 50,
     change: function(event, ui) {
-      console.log(ui.value);
+      changeColorCoding(ui.value);
     }
   });
 };

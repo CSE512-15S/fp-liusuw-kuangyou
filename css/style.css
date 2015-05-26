@@ -37,3 +37,15 @@ table, td, th {
   fill-opacity: .125;
   shape-rendering: crispEdges;
 }
+
+.highlight_border {
+    border: solid 2px red;
+}
+
+.converge {
+    background-color: green;
+}
+
+.diverge {
+    background-color: orange;
+}

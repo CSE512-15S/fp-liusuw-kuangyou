@@ -67,26 +67,44 @@
 		}
 
 		$entropies_cmd = "sudo /usr/bin/python python/calculate_entropy.py ".$file;
-		$col_aa_cmd = "sudo /usr/bin/python python/write_col_aa.py ".$file." ".($index);
+		
+		$startIndex = 0;
+		$endIndex = 0;
+		if ($index > 10) {
+			$startIndex = $index - 10;
+		} else {
+			$startIndex = 1;
+		}
 
+		// if ($index < 200)  MAKE SURE THE ENDING BUG.....
+		for ($i = $startIndex; $i <= $index + 10; $i++) {
+			$col_aa_cmd = "sudo /usr/bin/python python/write_col_aa.py ".$file." ".($i);	
+			$json_file = "output/".$file."/".$file."-".$i.".json";
+			if (!is_file($json_file)) {
+				system($col_aa_cmd);
+			}
+		}
+		
 		$csv_file = "output/".$file."/".$file."_entropies.csv";
-		$json_file = "output/".$file."/".$file."-".$index.".json";
-
 		if (!is_file($csv_file)) {
 			system($entropies_cmd);	
-		}
-		if (!is_file($json_file)) {
-			system($col_aa_cmd);
 		}
 
 		if (strcmp($_GET['request'], "json") == 0) {
 			header('Content-Type: application/json');
-			$file_content = file($json_file);
+			$file_content = "{";
+			for ($i = $startIndex; $i <= $index + 10; $i++) {
+				$json_file = "output/".$file."/".$file."-".$i.".json";
+				$file_content = $file_content. "\"".$i."\": ".file_get_contents($json_file).",";
+			}
+			$file_content[strlen($file_content) - 1] = "}";
+			print_r ($file_content);
 		} else if (strcmp($_GET['request'], "csv") == 0) {
 			header('Content-Type: text/plain; charset=utf-8');
 			$file_content = file($csv_file);
+			print_r(implode("", $file_content));
 		}
-		print_r(implode("", $file_content));
+		
 
 	}
 ?>
