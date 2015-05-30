@@ -145,6 +145,9 @@ window.onload = function() {
     var selectControl = document.getElementById("fasta_select");
     for (var i = 0; i < fastas.length; i++) {
       var curr = document.createElement("option");
+      if (i==0) {
+        curr.selected="selected";
+      }
       curr.value = fastas[i];
       curr.innerHTML = fastas[i];
       selectControl.appendChild(curr);
@@ -156,7 +159,7 @@ window.onload = function() {
   $("#slider").slider({
     min: 0,
     max: 100,
-    value: 50,
+    value: 15,
     change: function(event, ui) {
       changeColorCoding(ui.value);
     }

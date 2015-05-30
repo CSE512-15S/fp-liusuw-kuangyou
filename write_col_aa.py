@@ -2,15 +2,13 @@
 from Bio import SeqIO
 import sys
 import os
-import compare_consensus as cc
 
 
 # Takes in two argument from command line
 # fasta file name, and index of interests
 def main():
-    GET_input = sys.argv[1]  # Patient fasta alignment file
+    GET_input = sys.argv[1]
     index = int(sys.argv[2])
-    emp1 = cc.compare_consensus(GET_input)
     filepath = "fasta/" + GET_input + ".fasta"
 
     # parse in all the file
@@ -22,12 +20,7 @@ def main():
             i += 1
             continue
         curr_id = seq_record.id
-
-        curr_aa_freq = emp1.get_aa_freq(index, seq_record.seq[index-1])
-        curr_consensus_freq = emp1.get_consensus_aa_freq(index)
-
-        # return text would be <animo acid>-<curr aa freq>-<consencus aa freq>
-        color_coding = "-" + str(curr_aa_freq) + "-" + str(curr_consensus_freq)
+        color_coding = ""   # To be filled
         # Switch from index 1 to index 0
         curr_aa = seq_record.seq[index - 1] + color_coding
         # Assuming ID has form 1V##X### (# are numbers)
@@ -35,7 +28,6 @@ def main():
         if curr_version not in mapping:
             mapping[curr_version] = []
         mapping[curr_version].append(curr_aa)
-        i += 1
 
     write_to_json(mapping, GET_input, index)
 

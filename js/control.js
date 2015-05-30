@@ -9,16 +9,33 @@ function changeContext(d) {
 
 function changeColorCoding(percent) {
   var percentage = percent / 100.0;
+  document.getElementById("threshold").innerHTML = "Threshold: " + percent + "%";
   console.log(percentage);
   var cells = document.querySelectorAll("td");
   for (var i = 0; i < cells.length; i++) {
     if (cells[i].hasAttribute("freq")) {
-      var freq = parseFloat(cells[i].getAttribute("freq"));
+      var freq = cells[i].getAttribute("freq");
+      var freqSplit = freq.split("-");
+      var freqCurrAA = parseFloat(freqSplit[0]);
+      var freqConsensus = parseFloat(freqSplit[1]);
+      var difference = freqCurrAA - freqConsensus;
       cells[i].className = "";
-      if (freq < percentage) {
-        cells[i].classList.add("diverge");
-      } else {
-        cells[i].classList.add("converge");
+
+      var lastClass = $(cells[i]).attr('class').split(' ').pop();
+      $(cells[i]).removeClass(lastClass);
+
+      if (cells[i].innerHTML === "-") {
+        cells[i].innerHTML = "";
+        cells[i].classList.add("align-junk");
+      } else if (difference === 0.0 || difference === -0.0) {
+        cells[i].classList.add("no-change");
+        cells[i].innerHTML = "";
+      } else if (difference > percentage) {
+        cells[i].classList.add("more-common");
+      } else if (difference < -1 * percentage) {
+        cells[i].classList.add("less-common");
+      } else if (difference < percentage && difference > -1 * percentage) {
+        cells[i].classList.add("noise");
       }
     }
   }

@@ -42,10 +42,14 @@ table, td, th {
     border: solid 2px red;
 }
 
-.converge {
-    background-color: green;
+.more-common {
+    background-color: blue;
 }
 
-.diverge {
+.less-common {
     background-color: orange;
+}
+
+.noise {
+    background-color: green;
 }
