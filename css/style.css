@@ -1,6 +1,6 @@
 #SVG {
 	margin-left: 50px;
-	margin-top: 140px;
+	margin-top: 30px;
 	width: 960px;
 	height: 500px;
 }
@@ -10,7 +10,7 @@
 	top: 0;
 	right: 0;
 	//left: 970;
-	left: 60%;
+	left: 80%;
 	padding-left: 20px;
 	background-color: #e7efff;
 }
