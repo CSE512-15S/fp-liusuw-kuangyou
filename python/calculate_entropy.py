@@ -14,11 +14,17 @@ def main():
 
     ids = []
     seqs = []
+    record = list(SeqIO.parse(filepath, "fasta"))
 
-    # parse in all the file
-    for seq_record in SeqIO.parse(filepath, "fasta"):
-        ids.append(seq_record.id)
-        seqs.append(seq_record.seq)
+    # Write consensus to file
+    f = open("output/" + GET_input + "/" + GET_input + "_consensus.txt", "w")
+    f.write(str(record[0].seq))
+    f.close()
+
+    # parse in rest of the file
+    for i in range(1, len(record)):
+        ids.append(record[i].id)
+        seqs.append(record[i].seq)
 
     entropies = calculate(seqs)
 

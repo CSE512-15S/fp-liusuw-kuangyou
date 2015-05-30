@@ -70,7 +70,9 @@ function explodeDetails(d) {
                     var td = document.createElement("td");
                     
                     var splitString = data[col][v].aa[j].split("-");
+                    td.setAttribute("col", col);
                     td.setAttribute("freq", splitString[1] + "-" + splitString[2]);
+                    td.onclick = showToolTip;
                     td.appendChild(document.createTextNode(splitString[0]));
                     if (col == currIndex) {
                         td.classList.add("highlight_border");

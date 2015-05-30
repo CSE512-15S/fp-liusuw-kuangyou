@@ -53,3 +53,8 @@ table, td, th {
 .noise {
     background-color: green;
 }
+
+#tooltip {
+    position: fixed;
+    right: 1px;
+}
