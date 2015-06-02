@@ -42,10 +42,19 @@ function type(d) {
 function init_SVG(fileName){
   document.getElementById("sequence_name").innerHTML = fileName;
   var margin = {top: 10, right: 10, bottom: 100, left: 40},
-    margin2 = {top: 430, right: 10, bottom: 20, left: 40},
+    //margin2 = {top: 430, right: 10, bottom: 20, left: 40},
+	
+	margin2 = {top: 300, right: 10, bottom: 20, left: 40},
+	/*
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     height2 = 500 - margin2.top - margin2.bottom;
+	*/
+		
+	width = 700 - margin.left - margin.right,
+    height = 365 - margin.top - margin.bottom,
+    height2 = 365- margin2.top - margin2.bottom;
+	
 
   var csvData;
 
@@ -60,7 +69,10 @@ function init_SVG(fileName){
 
   var svg = d3.select("#SVG").append("svg")
       .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom);
+      .attr("height", height + margin.top + margin.bottom)
+	  .attr("fill", function(d) {
+		return "rgb(0, 175, 239)";
+	  });
 
   var focus = svg.append("g")
       .attr("class", "focus")
@@ -73,6 +85,8 @@ function init_SVG(fileName){
   var brush = d3.svg.brush()
     .x(x2)
     .on("brush", function() { brushed(brush, x2, focus, xAxis, yAxis, width, height, csvData); });
+	
+
 
   // example query 
   // http://192.241.216.102/512-finalProject/query.php?file=HIV_pt1_AA_align_tp1&index=9&request=csv
@@ -145,6 +159,9 @@ window.onload = function() {
     var selectControl = document.getElementById("fasta_select");
     for (var i = 0; i < fastas.length; i++) {
       var curr = document.createElement("option");
+      if (i==0) {
+        curr.selected="selected";
+      }
       curr.value = fastas[i];
       curr.innerHTML = fastas[i];
       selectControl.appendChild(curr);
@@ -156,7 +173,7 @@ window.onload = function() {
   $("#slider").slider({
     min: 0,
     max: 100,
-    value: 50,
+    value: 15,
     change: function(event, ui) {
       changeColorCoding(ui.value);
     }

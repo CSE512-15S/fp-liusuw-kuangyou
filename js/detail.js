@@ -55,7 +55,7 @@ function explodeDetails(d) {
                 var tdDetail = document.createElement("td");
                 
                 var splitString = data[i][v].aa[0].split("-");
-                tdDetail.setAttribute("freq", splitString[1]);
+                tdDetail.setAttribute("freq", splitString[1] + "-" + splitString[2]);
                 tdDetail.appendChild(document.createTextNode(splitString[0]));
                 if (i == currIndex) {
                     tdDetail.classList.add("highlight_border");
@@ -70,7 +70,9 @@ function explodeDetails(d) {
                     var td = document.createElement("td");
                     
                     var splitString = data[col][v].aa[j].split("-");
-                    td.setAttribute("freq", splitString[1]);
+                    td.setAttribute("col", col);
+                    td.setAttribute("freq", splitString[1] + "-" + splitString[2]);
+                    td.onclick = showToolTip;
                     td.appendChild(document.createTextNode(splitString[0]));
                     if (col == currIndex) {
                         td.classList.add("highlight_border");
@@ -80,7 +82,7 @@ function explodeDetails(d) {
                 old_table.appendChild(trRest);
             }
         }
-        var defaultThreshold = 50;
-        changeColorCoding(50);
+        var defaultThreshold = 15;
+        changeColorCoding(15);
     });
 }

@@ -4,6 +4,16 @@
 	error_reporting(E_ALL);
 	header('Access-Control-Allow-Origin: *');
 
+	// looking for fasta file
+	if (isset($_GET['consensus'])) {
+		$fileAndCol = explode("-", $_GET['consensus']);
+
+		header("Content-Type: text/plain; charset=utf-8");
+		$fileContent = file_get_contents("output/".$fileAndCol[0]."/".$fileAndCol[0]."_consensus.txt");
+		print_r($fileContent[intval($fileAndCol[1]) - 1]);
+		exit();
+	}
+
 	// someone is uploading stuff
 	if (isset($_FILES['upload'])) {
 		$fileExtension = pathinfo($_FILES['upload']['name'])['extension'];
@@ -104,7 +114,7 @@
 			$file_content = file($csv_file);
 			print_r(implode("", $file_content));
 		}
-		
+		exit();
 
 	}
 ?>

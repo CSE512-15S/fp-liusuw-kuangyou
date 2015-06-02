@@ -10,31 +10,51 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
+	
+	<header id = "headerModifier">
+		<p></br><h1>THIS IS THE TITLE FOR THE VISUALIZATION</h1></p>
+	</header>
 	<body>
-		<h1 id="sequence_name">HIV_pt1_AA_align_tp1</h1>
+		<h3 id="barchart">This is the title for this bar chart</h3>
+		<p id = "file"> Current File: <b id="sequence_name">HIV_pt1_AA_align_tp1</b></p>
 		<div id="SVG"></div>
 		<div id="details">
-			<h1>Details</h1>
-			<div id="slider"></div>
-			<!-- <button id="more_column_button" onclick="displayMoreColumns(this)">More columns</button> -->
-			<table id="time_line"></table>
+			<h3 id="detailTitle">This is the title for this table</h3>
+			<div id="detailArea">
+				<p id="thresholdP">Threshold: <b id="threshold">15%</b></p>
+				<span id="tooltip"></span>
+				<div id="slider">
+
+				</div>
+				<!-- <button id="more_column_button" onclick="displayMoreColumns(this)">More columns</button> -->
+				<div class = "scrollit">
+					<table id="time_line">
+					
+					</table>
+				</div>
+			</div>
 		</div>
-		<div id="control">
+		<div id="control"> Select file to upload: 
 			<select id="fasta_select" onchange="changeContext(this)"><select>
 		</div>
 
 
 		<form action="query.php" method="post" enctype="multipart/form-data"> 
-	  		<div><label id="upload">Select file to upload: 
+	  		<div><label id="upload"> 
 				<input type="file" id="upload" name="upload"/></label>
 			</div> 
 
 	  		<div>
 	    		<input type="hidden" name="action" value="upload"/> 
+			</div>
+			<div id="submit">
 	    		<input type="submit" value="Submit"/> 
+			<div>
 	  		</div>
 
 		</form>
 	</body>
-
+	<footer>
+		<div id="footer"><p>description for this visualization</p></div>
+	</footer>
 </html>
