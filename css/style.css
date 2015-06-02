@@ -38,9 +38,7 @@ table, td, th {
   shape-rendering: crispEdges;
 }
 
-.highlight_border {
-    border: solid 2px red;
-}
+
 
 .converge {
     background-color: green;
@@ -48,4 +46,8 @@ table, td, th {
 
 .diverge {
     background-color: orange;
+}
+
+.highlight_border {
+    border: solid 2px red;
 }
