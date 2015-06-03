@@ -44,18 +44,23 @@ function init_SVG(fileName){
   var margin = {top: 10, right: 10, bottom: 100, left: 40},
     //margin2 = {top: 430, right: 10, bottom: 20, left: 40},
 	
-	margin2 = {top: 300, right: 10, bottom: 20, left: 40},
+	//margin2 = {top: 300, right: 10, bottom: 20, left: 40},
+	margin2 = {top: 340, right: 10, bottom: 20, left: 40},
+
 	/*
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     height2 = 500 - margin2.top - margin2.bottom;
-	*/
+	
 		
 	width = 700 - margin.left - margin.right,
     height = 365 - margin.top - margin.bottom,
     height2 = 365- margin2.top - margin2.bottom;
+	*/
+	width = 700 - margin.left - margin.right,
+    height = 410 - margin.top - margin.bottom,
+    height2 = 410- margin2.top - margin2.bottom;
 	
-
   var csvData;
 
   x = d3.scale.linear().range([0, width]);
@@ -73,10 +78,22 @@ function init_SVG(fileName){
 	  .attr("fill", function(d) {
 		return "rgb(0, 175, 239)";
 	  });
-
+	  
+	svg.append("rect")
+		.attr("x", margin.left)
+		.attr("y", margin.top)
+		.attr("width", width)
+		.attr("height", height)
+		.attr("fill", "#fcfcfc");
+		
+	svg.append("g")
+		.attr("transform", "translate(" + 40 + "," + 10 + ")");
+		
+	
   var focus = svg.append("g")
       .attr("class", "focus")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	  	  //.attr("transform", "translate(" + 40 + "," + 10 + ")");
 
   var context = svg.append("g")
       .attr("class", "context")

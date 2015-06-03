@@ -11,15 +11,19 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	
-	<header id = "headerModifier">
-		<p></br><h1>THIS IS THE TITLE FOR THE VISUALIZATION</h1></p>
-	</header>
-	<body>
-		<h3 id="barchart">This is the title for this bar chart</h3>
-		<p id = "file"> Current File: <b id="sequence_name">HIV_pt1_AA_align_tp1</b></p>
-		<div id="SVG"></div>
+
+	<body><div id="content">
+		<div id = "header" class = "gradient">
+			</br><h1>THIS IS THE TITLE FOR THE VISUALIZATION</h1>
+		</div>
+		
+		<div id="SVG">
+			<h2 id="barchart">This Is The Title For The Bar Chart</h2>
+			<p id = "file"> Current file: <b id="sequence_name">HIV_pt1_AA_align_tp1</b></p>
+		</div>
+		
 		<div id="details">
-			<h3 id="detailTitle">This is the title for this table</h3>
+			<h2 id="detailTitle">This Is The Title For The Table</h2>
 			<div id="detailArea">
 				<p id="thresholdP">Threshold: <b id="threshold">15%</b></p>
 				<span id="tooltip"></span>
@@ -34,27 +38,28 @@
 				</div>
 			</div>
 		</div>
-		<div id="control"> Select file to upload: 
+		<div id="control"> Select file from list: 
 			<select id="fasta_select" onchange="changeContext(this)"><select>
 		</div>
 
 
 		<form action="query.php" method="post" enctype="multipart/form-data"> 
-	  		<div><label id="upload"> 
-				<input type="file" id="upload" name="upload"/></label>
+	  		<div><label id="upload"> Upload file from drive: 
+				<input type="file" id="upload2" name="upload"/></label>
 			</div> 
 
 	  		<div>
 	    		<input type="hidden" name="action" value="upload"/> 
 			</div>
 			<div id="submit">
-	    		<input type="submit" value="Submit"/> 
+	    		<input type="submit" id = "submit_button" value="Submit" /> 
 			<div>
 	  		</div>
 
 		</form>
-	</body>
-	<footer>
-		<div id="footer"><p>description for this visualization</p></div>
-	</footer>
+		<footer class="footer_g">
+			<div id="footer"><p></br></br>description for this visualization</p></div>
+		</footer>
+	</div></body>
+
 </html>

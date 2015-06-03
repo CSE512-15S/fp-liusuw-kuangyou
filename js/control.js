@@ -45,6 +45,6 @@ function showToolTip(d) {
   var currFastaFile = document.getElementById("sequence_name");
   var url = "http://192.241.216.102/512-finalProject/query.php?consensus=" + currFastaFile.innerHTML + "-" + this.getAttribute("col");
   d3.text(url, function(error, text){
-    document.getElementById("tooltip").innerHTML = ("Consensus is:" + text);
+    document.getElementById("tooltip").innerHTML = ("Consensus: " + text);
   });
 }
