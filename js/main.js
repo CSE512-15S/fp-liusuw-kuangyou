@@ -84,7 +84,7 @@ function init_SVG(fileName){
 		.attr("y", margin.top)
 		.attr("width", width)
 		.attr("height", height)
-		.attr("fill", "#fcfcfc");
+		.attr("fill", "#f2f2f2");
 		
 	svg.append("g")
 		.attr("transform", "translate(" + 40 + "," + 10 + ")");
