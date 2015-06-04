@@ -40,7 +40,7 @@ function type(d) {
 }
 
 function init_SVG(fileName){
-  document.getElementById("sequence_name").innerHTML = fileName;
+//  document.getElementById("sequence_name").innerHTML = fileName;
   var margin = {top: 10, right: 10, bottom: 100, left: 40},
     //margin2 = {top: 430, right: 10, bottom: 20, left: 40},
 	
