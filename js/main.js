@@ -29,7 +29,9 @@ function brushed(brush, x2, focus, xAxis, yAxis, width, height, data) {
        .attr("height", height - y(filteredData[i].entropy))
        .attr("width", barWidth)
        .attr("index", filteredData[i].index)
-       .attr("onclick", "explodeDetails(this)");
+       .attr("onclick", "explodeDetails(this)")	   
+	   .on("mouseover", function(){d3.select(this).style("fill", "#036E93");})
+	   .on("mouseout", function(){d3.select(this).style("fill", "#01B3FD");});
     }
 }
 
@@ -40,7 +42,7 @@ function type(d) {
 }
 
 function init_SVG(fileName){
-//  document.getElementById("sequence_name").innerHTML = fileName;
+  document.getElementById("sequence_name").innerHTML = fileName;
   var margin = {top: 10, right: 10, bottom: 100, left: 40},
     //margin2 = {top: 430, right: 10, bottom: 20, left: 40},
 	
@@ -88,8 +90,15 @@ function init_SVG(fileName){
 		
 	svg.append("g")
 		.attr("transform", "translate(" + 40 + "," + 10 + ")");
-		
-	
+/*
+	svg.append("text")
+	.attr("class","x label")
+	.attr("text-anchor", "middle")
+	.attr("x", 100)
+	.attr("y", height+120)
+	//.attr("transform","translate("+ (padding/2) +","+(height/2)+")rotate(-90)") 
+	.text("Time by Day (Please select your time area.)");
+*/	
   var focus = svg.append("g")
       .attr("class", "focus")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -166,6 +175,12 @@ function init_SVG(fileName){
            .attr("y2", y(curr));
     }
   });
+}
+
+function myFunction() {
+	var myWindow = window.open("", "MsgWindow", "width=400, height=200");
+    myWindow.document.write("<p><b>Instructions!</b></p>");
+
 }
 
 window.onload = function() {
