@@ -162,7 +162,7 @@ footer {
 	margin-top:-28px;
 	margin-bottom: 0px;
 	width:50%;
-
+        font-size: 8px;
 }
 
 .axis path, .axis line {
@@ -197,5 +197,9 @@ footer {
 	margin-top:22px;
 	overflow: scroll;
     height:500px;
+}
+.nowrap_right {
+	margin-left:200px;
+	margin-top:-80px;
 }
 
