@@ -86,14 +86,15 @@ footer {
 
 #x_label{
 	position: absolute;
-	margin-left: 40px;
+	margin-left: 240px;
 	margin-top: 415px;
-
 }
 #y_label{
+	transform: rotate(270deg);
+	transform-origin: left top 0;
 	position: absolute;
-	margin-left: 10px;
-	margin-top: -7px;
+	margin-left: -25px;
+	margin-top: 300px;
 }
 #control {
 	position: absolute;
