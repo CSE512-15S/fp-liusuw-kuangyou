@@ -32,6 +32,7 @@ body {
 }
 table {
 	border-collapse: collapse;
+	overflow-y: scroll;
 }
 table, td, th {
 	border: 1px solid #A1A7B2;
@@ -141,8 +142,8 @@ footer {
 
 #tooltip {
     position: absolute;
-	margin-left: 425px;
-	margin-top: -28px;
+	right: 100%;
+	top: 70%;
 	width: 86;
 	height: 18;
 	//background-color: red;
@@ -195,11 +196,17 @@ footer {
 }
 .scrollit {
 	margin-top:22px;
-	overflow: scroll;
+	overflow-y: auto;
     height:500px;
 }
 .nowrap_right {
 	position:absolute;
-	margin-left:287x;
-	//margin-top:-30px;
+	/*margin-right:2%;
+	margin-top:5%;*/
+}
+
+#legend {
+	position: absolute;
+	top: 2%;
+	right: 2%;
 }
