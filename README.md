@@ -23,7 +23,7 @@ So we want to build a tool to help spot interesting region of the HIV’s protei
 1.	Variants of the specific Amino Acid in sequences
 2.	HIV’s mutation direction in response to subject’s immune system
 3.	Details of the epitope overlapping the mutated region 
-![initial discussion](https://cloud.githubusercontent.com/assets/4379884/7601246/92210afe-f8c8-11e4-9ca2-64df2a468fcc.jpg)
+![initial discussion](https://cloud.githubusercontent.com/assets/4379884/8109119/f9b19f5a-1009-11e5-87fe-87e5a268713c.png)
 
 ## Data
 1.	HIV protein sequence from infected individuals
