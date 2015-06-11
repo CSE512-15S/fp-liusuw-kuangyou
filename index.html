@@ -14,21 +14,28 @@
 
 	<body><div id="content">
 		<div id = "header" class = "gradient">
-			</br><h1>THIS IS THE TITLE FOR THE VISUALIZATION</h1>
+			</br><h1>HIV EVOLVING SITES TOOL</h1>
 		</div>
 		
 		<div id="SVG">
-			<h2 id="barchart">This Is The Title For The Bar Chart</h2>
+			<h2 id="barchart">Site-by-site Shannon Entropy Scores</h2>
 			<p id = "file"> Current file: <b id="sequence_name">HIV_pt1_AA_align_tp1</b></p>
+			<button id="instructions" onclick="myFunction()">Instructions</button>			
+			<p id="y_label">Entropy score: <br>[a measure of uncertainty/variability]</p>
+			<p id="x_label">Amino acid positions [relative to HIV-1 Gp120-C2V5]</p>
 		</div>
-		
+
 		<div id="details">
-			<h2 id="detailTitle">This Is The Title For The Table</h2>
+			<h2 id="detailTitle">Directional Evolution of Amino Acids</h2>
+			<p id="secondTitle">Degree of change relative to HIV-1 database freq</p>
 			<div id="detailArea">
 				<p id="thresholdP">Threshold: <b id="threshold">15%</b></p>
 				<span id="tooltip"></span>
 				<div id="slider">
-
+					<p id="CMod">  
+					  <span class="nowrap_left" style="text-align:left">Conservative</span>
+					  <span class="nowrap_right" style="text-align:right">Modest</span>
+					</p>
 				</div>
 				<!-- <button id="more_column_button" onclick="displayMoreColumns(this)">More columns</button> -->
 				<div class = "scrollit">
@@ -37,6 +44,8 @@
 					</table>
 				</div>
 			</div>
+			<img id="legend" src="https://cloud.githubusercontent.com/assets/4379884/8026853/61ad65f4-0d3e-11e5-91b7-e48fe98377c6.jpg" alt="Legend View" align="right" style="width:100px;height:100px;">
+			<!-- <img src="https://cloud.githubusercontent.com/assets/4379884/8027141/d4c9a960-0d45-11e5-8fad-150ec503525c.jpg" alt="Tree Explain View" align="center" style="width:150px;height:150px;">	 -->	
 		</div>
 		<div id="control"> Select file from list: 
 			<select id="fasta_select" onchange="changeContext(this)"><select>
@@ -63,3 +72,4 @@
 	</div></body>
 
 </html>
+
