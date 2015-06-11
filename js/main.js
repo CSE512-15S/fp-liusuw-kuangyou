@@ -170,6 +170,20 @@ function init_SVG(fileName){
   });
 }
 
+function myFunction() {
+	var myWindow = window.open("", "MsgWindow", "width=720, height=300");
+    myWindow.document.write("<p><b>Instructions:</b></p>");
+    myWindow.document.write(
+      "<ol>" +
+        "<li>Drag and select the region on the 'Amino Acid Positions' axis.</li>"+
+        "<li>Adjust or move the region by dragging its left or right border</li>"+
+        "<li>Click the bar if you want to look at the directional evolution of the according AA.</li>"+
+        "<li>Browse the table in detail by scrolling up or down.</li>"+
+        "<li>Adjust the threshold bar.</li>"+
+        "<li>Click a cell for the consensus.</li>"+
+      "</ol>"
+    );
+}
 window.onload = function() {
   
   // initialize the select box
