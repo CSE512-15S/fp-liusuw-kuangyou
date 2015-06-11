@@ -1,38 +1,44 @@
-# T-Cell-Epitope-Visualization
+# HIV EVOLVING SITES TOOL
 ## Team members:
 1.	Liusu Wang    liusuw@uw.edu
 2.	Kuangyou Yao     kuangyou@uw.edu
 	
 ## Project:
 
-We decide to design and implement an interactive visualization for HIV’s mutation in a human body and T-cell epitope mapping. A related visualization tool can be found through this URL:
-	http://www.hiv.lanl.gov/content/sequence/jbrowse/?loc=Gag%3A1..500&tracks=PROTEIN%2CSub-protein_map&data=hivdata%2FEpitope-protein&highlight=
+### Abstract:
+This project is to create a visualization tool in aid of studying one of the deadliest viruses known to mankind, the Human immunodeficiency virus, commonly known as HIV. Currently, there is no cure for HIV and most infected individuals succumb to the end-stage disease known as Acquired Immunodeficiency Syndrome, or AIDS. HIV is a retrovirus, which has certain features making it difficult to treat and eradicate including a high mutation rate. Due to its ability to rapidly generate variation, the human immune system cannot easily target the virus as an outside pathogen. What’s worse, the virus also specially infects and destroys human T-cells, which are essential for the immune system to fight diseases. HIV was the culprit responsible for the 1.5 million lives lost globally in the year 2013. (UNAIDS, 2013)
 
-We will be cooperating with Andrew Gartland, a staff scientist at Fred Hutchinson Cancer Research Center and Mike Dapp, a Post-Doctoral HIV researcher at UW Immunology.
+Understanding how the virus evolves in the human body is an important part in defeating this disease. Studies have shown that some individuals possess certain immune genotypes that naturally control virus and significantly delay the progression to AIDS. Hypotheses suggest that it is because their immune system recognize virus through a specific region of the virus shell protein that cannot tolerate mutations very well. Most likely, that part of the protein is crucial to the virus. Without it, the virus cannot survive or maintain its ability to replicate. 
 
-## Goal
-The goal of the software is to assist in finding a potential cure for the deadly disease AIDS.
+Therefore, it is of interest to discover parts in the virus, which are crucial to virus replication. This information could be critical to informing effective vaccine strategies, and to save more people in the future. The project is also projected to support other kinds of virus evolution which might shows similar pattern as HIV.
 
-AIDS is caused by HIV, which is a highly mutable virus. Once HIV enters a subject’s system, the HIV virus will “evolve” to different types in order to escape from subject’s immune system. The virus evolves through a change in certain amino acid in its protein shell. 
+Michael Dapp from the UW Microbiology Department provides us with HIV protein sequence data collected from patients infected by the virus in the US. As students studying Computer Science, it is an absolute thrill for us to use our skills and knowledge we learn from the Data Visualization Course and give help in the war against a deadly disease. It would be like Edward Jenner conquered smallpox and John Snow defeated cholera at other time in mankind history. 
 
-According to Andrew, the scientist at Fred Hutch center, research shows that most people infected with HIV have T-cells that target specific region of the virus, known as epitopes, which are ineffective at recognizing the virus over time. Specifically, they target a part that is prone to mutation; however, a small minority of people known as “elite controllers” have T-cells that target a very unique set of epitopes and are able to control without ever developing AIDS.
+Previous Related Work:
+HIV envelope regions were sequenced from time of infection until AIDS in nine adult men infected with HIV type 1 In order to help visualize the location and types of mutations that had arisen, large tables were made using Microsoft Excel.  Mutations relative to the original founder virus sequence were color-coded based on specific features.
 
-So we want to build a tool to help spot interesting region of the HIV’s protein sequence and provide an intuitive and interactive view of the virus mutation trend. 
+This is a relatively simple and static visualization of the virus. In order for researchers to highlight a certain cell with color, they would have to click on every single cell for the color. Also because of the long protein sequence highlighting the positions with significant variation, researchers would have to collapse the columns without mutation, neglecting a lot of neighboring positions.
 
-## Things to Visualize
-1.	Variants of the specific Amino Acid in sequences
-2.	HIV’s mutation direction in response to subject’s immune system
-3.	Details of the epitope overlapping the mutated region 
 ![initial discussion](https://cloud.githubusercontent.com/assets/4379884/8109119/f9b19f5a-1009-11e5-87fe-87e5a268713c.png)
 
-## Data
-1.	HIV protein sequence from infected individuals
-2.	Known T-cell HIV epitopes mapping
+## Dataset: HIV protein sequence from infected individuals
 
-## Tool Set
-1.	Tableau – exploration
-2.	Adobe Illustrator – prototype, poster
-3.	D3 - implementation
-4.	MySQL (maybe)
+## Work Responsiblities:
+
+Kuangyou Yao: Research, backend implementation, Bar chart implementation, paper
+Liusu Wang: Research, table implementation, design, layout, refinement, paper
+
+## Research and development process:
+
+We primarily discuss and learn about the topic with our collaborators. They helped us understand the basic concept and recommended one paper to read. We also conducted research on similiar product and found that the only similiar work that has been done was by excel, which is very time-consuming and lack of flexibility and data analysis. After the initial research we designed and implemented this tool.
+Development process:
+1.	Implement “Context + Focus via brushing” interactive visualization tool using bioinformatics data. 
+2.	Set up a PHP-powered AJAX server
+3.	Implement backend python scripts to generate and send back query results.
+4.	Implement detailed table part using JavaScript and JQuery UI
+5.	Final CSS polish for DOM Element positioning, color, font, etc.
+
+During our development process, we kept doing evaluation and gether feedback from our user to improve the piece. At the end we conduct survey and observation analysis to evaluate our work.
+
 
 
