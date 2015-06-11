@@ -202,7 +202,7 @@ window.onload = function() {
       selectControl.appendChild(curr);
     }
   });
-  init_SVG("HIV_pt1_AA_align_tp1");
+  init_SVG("HIV_pt10_AA_align_tp1");
 
   // initialize the threshold-slider
   $("#slider").slider({
