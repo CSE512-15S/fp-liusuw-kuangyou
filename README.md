@@ -33,7 +33,7 @@ This is a relatively simple and static visualization of the virus. In order for 
 
 ## Work Responsiblities:
 
-Kuangyou Yao: Research, backend implementation, Bar chart implementation, paper
+Kuangyou Yao: Research, backend implementation, Bar chart implementation, paper<br />
 Liusu Wang: Research, table implementation, design, layout, refinement, paper
 
 ## Research and development process:
