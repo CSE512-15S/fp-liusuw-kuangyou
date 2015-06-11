@@ -29,7 +29,9 @@ function brushed(brush, x2, focus, xAxis, yAxis, width, height, data) {
        .attr("height", height - y(filteredData[i].entropy))
        .attr("width", barWidth)
        .attr("index", filteredData[i].index)
-       .attr("onclick", "explodeDetails(this)");
+       .attr("onclick", "explodeDetails(this)")	   
+	   .on("mouseover", function(){d3.select(this).style("fill", "#036E93");})
+	   .on("mouseout", function(){d3.select(this).style("fill", "#01B3FD");});
     }
 }
 
@@ -76,8 +78,7 @@ function init_SVG(fileName){
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
 	  .attr("fill", function(d) {
-		//return "rgb(0, 175, 239)";
-		return "rgb(110,179,243)";
+		return "rgb(0, 175, 239)";
 	  });
 	  
 	svg.append("rect")
@@ -89,9 +90,15 @@ function init_SVG(fileName){
 		
 	svg.append("g")
 		.attr("transform", "translate(" + 40 + "," + 10 + ")");
-	
-
-	
+/*
+	svg.append("text")
+	.attr("class","x label")
+	.attr("text-anchor", "middle")
+	.attr("x", 100)
+	.attr("y", height+120)
+	//.attr("transform","translate("+ (padding/2) +","+(height/2)+")rotate(-90)") 
+	.text("Time by Day (Please select your time area.)");
+*/	
   var focus = svg.append("g")
       .attr("class", "focus")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -170,6 +177,21 @@ function init_SVG(fileName){
   });
 }
 
+function myFunction() {
+	var myWindow = window.open("", "MsgWindow", "width=720, height=500");
+    myWindow.document.write("<p><b>Instructions:</b></p>");
+    myWindow.document.write(
+      "<ol>" +
+        "<li>Drag and select the region on the 'Amino Acid Positions' axis.</li>"+
+        "<li>Adjust or move the region by dragging its left or right border</li>"+
+        "<li>Click the bar if you want to look at the directional evolution of the according AA.</li>"+
+        "<li>Browse the table in detail by scrolling up or down.</li>"+
+        "<li>Adjust the threshold bar.</li>"+
+        "<li>Click a cell for the consensus.</li>"+
+      "</ol>"
+    );
+}
+
 window.onload = function() {
   
   // initialize the select box
@@ -186,7 +208,7 @@ window.onload = function() {
       selectControl.appendChild(curr);
     }
   });
-  init_SVG("HIV_pt1_AA_align_tp1");
+  init_SVG("HIV_pt10_AA_align_tp1");
 
   // initialize the threshold-slider
   $("#slider").slider({
