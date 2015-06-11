@@ -2,7 +2,11 @@
 ## Team members:
 1.	Liusu Wang    liusuw@uw.edu
 2.	Kuangyou Yao     kuangyou@uw.edu
-	
+
+## Links:
+[Final Paper:](doc/HIV Evolution Sites Visualization.pdf)
+[Summary Screen shot:](img/summary.jpg)
+
 ## Project:
 
 We decide to design and implement an interactive visualization for HIV’s mutation in a human body and T-cell epitope mapping. A related visualization tool can be found through this URL:
