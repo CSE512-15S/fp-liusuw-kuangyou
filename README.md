@@ -4,8 +4,8 @@
 2.	Kuangyou Yao     kuangyou@uw.edu
 
 ## Links:
-[Final Paper:](Final/paper-liusuw-kuangyou.pdf)
-[Poster:](Final/poster-liusuw-kuangyou.png)
+[Final Paper](Final/paper-liusuw-kuangyou.pdf) <br />
+[Poster](Final/poster-liusuw-kuangyou.png) <br />
 
 ## Project:
 
