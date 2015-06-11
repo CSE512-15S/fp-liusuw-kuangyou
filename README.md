@@ -1,11 +1,11 @@
-# T-Cell-Epitope-Visualization
+# HIV EVOLUTION SITES VISUALIZATION
 ## Team members:
 1.	Liusu Wang    liusuw@uw.edu
 2.	Kuangyou Yao     kuangyou@uw.edu
 
 ## Links:
-[Final Paper:](doc/HIV Evolution Sites Visualization.pdf)
-[Summary Screen shot:](img/summary.jpg)
+![Final Paper:](Final/paper-liusuw-kuangyou.pdf)
+![Poster:](Final/poster-liusuw-kuangyou.png)
 
 ## Project:
 
