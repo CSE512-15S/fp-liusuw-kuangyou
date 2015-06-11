@@ -29,7 +29,9 @@ function brushed(brush, x2, focus, xAxis, yAxis, width, height, data) {
        .attr("height", height - y(filteredData[i].entropy))
        .attr("width", barWidth)
        .attr("index", filteredData[i].index)
-       .attr("onclick", "explodeDetails(this)");
+       .attr("onclick", "explodeDetails(this)")	   
+	   .on("mouseover", function(){d3.select(this).style("fill", "#036E93");})
+	   .on("mouseout", function(){d3.select(this).style("fill", "#01B3FD");});
     }
 }
 
