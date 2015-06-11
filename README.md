@@ -2,13 +2,17 @@
 ## Team members:
 1.	Liusu Wang    liusuw@uw.edu
 2.	Kuangyou Yao     kuangyou@uw.edu
-3.	
+
 ![initial discussion](https://cloud.githubusercontent.com/assets/4379884/8109119/f9b19f5a-1009-11e5-87fe-87e5a268713c.png)
-## Links:
+
+
+## Links:<br />
 [Final Paper](Final/paper-liusuw-kuangyou.pdf) <br />
 [Poster](Final/poster-liusuw-kuangyou.png) <br />
 
-## Dataset: HIV protein sequence from infected individuals
+## Dataset: 
+HIV protein sequence from infected individuals
+
 ## Project:
 
 ### Abstract and Introduction:
