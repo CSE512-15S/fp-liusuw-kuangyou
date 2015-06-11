@@ -4,8 +4,8 @@
 2.	Kuangyou Yao     kuangyou@uw.edu
 
 ## Links:
-![Final Paper:](Final/paper-liusuw-kuangyou.pdf)
-![Poster:](Final/poster-liusuw-kuangyou.png)
+Final Paper: https://github.com/CSE512-15S/fp-liusuw-kuangyou/blob/gh-pages/Final/paper-liusuw-kuangyou.pdf
+Poster: https://github.com/CSE512-15S/fp-liusuw-kuangyou/blob/gh-pages/Final/poster-liusuw-kuangyou.png
 
 ## Project:
 
