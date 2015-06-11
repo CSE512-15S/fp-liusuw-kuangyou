@@ -2,8 +2,7 @@
 function changeContext(d) {
   var selectedFasta = d.options[d.selectedIndex].value;
   // Delete previous graph
-  // document.getElementById("SVG").innerHTML = "";
-  $("svg").remove();
+  document.getElementById("SVG").innerHTML = "";
   document.getElementById("time_line").innerHTML = "";
   init_SVG(selectedFasta);
 }
