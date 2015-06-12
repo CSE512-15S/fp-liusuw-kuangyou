@@ -32,8 +32,8 @@ Our project provides a basis for additional features like providing meta-data ab
 
 ## Work Responsiblities:
 
-Kuangyou Yao: Research, backend implementation, Bar chart implementation, paper<br />
-Liusu Wang: Research, detail implementation, design, layout, usability test, paper
+Kuangyou Yao: Research, backend implementation, bar chart implementation, paper<br />
+Liusu Wang: Research, detail implementation, design, layout, usability test, refinement, paper
 
 ## Research and development process:
 
