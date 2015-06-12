@@ -173,7 +173,7 @@ function init_SVG(fileName){
 }
 
 function myFunction() {
-	var myWindow = window.open("", "MsgWindow", "width=720, height=300");
+	var myWindow = window.open("", "MsgWindow", "width=720, height=170");
     myWindow.document.write("<p><b>Instructions:</b></p>");
     myWindow.document.write(
       "<ol>" +
