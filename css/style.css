@@ -57,7 +57,7 @@ table, td, th {
 	background-color: #ffffff;
 	position: absolute;
 	width: 1336px;
-	height: 1512px;
+	height: 2512px;
 	//margin:0 auto 0 auto;
 	//padding: 40px 0px 40px 0px;
 
@@ -167,8 +167,8 @@ table, td, th {
 }
 
 #description{
-	margin-left:-420px;
-	margin-top: 200px;
+	margin-left:-400px;
+	margin-top: 400px;
 }
 #summary_image{
 	
