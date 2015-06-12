@@ -169,12 +169,11 @@ table, td, th {
 #description{
 	position:absolute;
 	margin-left:-400px;
-	margin-top: 400px;
+	margin-top: 200px;
 }
 #summary_image{
 	
-	width:50%;
-	height:50%;
+
 	
 }
 .axis path, .axis line {
